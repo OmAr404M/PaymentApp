@@ -10,3 +10,20 @@ src
 |   |_app.module.ts
 |_styles.css (global css rules)
 |_index.html (cdn path for bootstrap & fa)
+
+Registration page
+
+src
+|__app
+    |__user
+    |   |_user.compnent.ts | .html
+    |   |_login (folder)  **
+    |   |_registration (folder)
+    |_Shared
+      |_pipes
+      |     |_first-key.pipe.ts 
+      |_services
+        |_auth.service.ts
+
+
+div.container>div.r

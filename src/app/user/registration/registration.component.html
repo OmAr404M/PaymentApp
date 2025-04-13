@@ -1,0 +1,53 @@
+<div class="md-4 h2 text-success">
+    Sign up
+</div>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <input class="form-control bg-body-seccondary"
+    placeholder="Full Name" formControlName="fullName"> 
+    <div class="error-feedback" 
+    *ngIf="  hasDisplayableError('fullName') && form.controls.
+    fullName.hasError('required')">
+    Please enter your full name!
+</div>    
+</div>
+<div class="mb-3">
+    <input class="form-control bg-body-seccondary"
+    placeholder="Email" formControlName="email">   
+    <div class="error-feedback" *ngIf="  hasDisplayableError('email') ">
+       <div *ngIf="form.controls.email.hasError('required')">
+            Please enter your Email !
+        </div>
+        <div *ngIf="form.controls.email.hasError('email')">
+            Please enter a valid Email address !
+        </div>
+</div>     
+</div>
+<div class="mb-3">
+    <input class="form-control bg-body-seccondary"
+    placeholder="Password" formControlName="password">  
+    <div class="error-feedback" *ngIf="  hasDisplayableError('password') ">
+        <ng-container>
+            
+        </ng-container>
+        <div *ngIf="form.controls.password.hasError('required')">
+             Please enter your password !
+         </div>
+         <div *ngIf="form.controls.password.hasError('minlength')">
+             Atleast 6 characters required !
+         </div>
+         <div *ngIf="form.controls.password.hasError('pattern')">
+            One or more special character(s) !
+        </div>
+ </div>        
+</div>
+<div class="mb-3">
+    <input class="form-control bg-body-seccondary"
+    placeholder="Confirm Password" formControlName="confirmPassword">     
+</div>
+<div class="tm-4">
+    <button type="submit" class="btn btn-success w-100 rounded-3">
+       Register
+    </button>
+</div>
+  </form>
